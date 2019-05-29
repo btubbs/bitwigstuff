@@ -1,0 +1,15 @@
+loadAPI(1);
+
+host.defineController(
+"SchmoTone",
+"BrentController",
+"1.0",
+"86725bf0-6317-11e9-b475-0800200c9a66"
+);
+
+host.defineMidiPorts(1, 1);
+
+function init() {
+	host.getMidiInPort(0).setMidiCallback(onMidiPort1);
+	noteIn = host.getMidiInPort(0).createNoteInput("Notes");
+}
